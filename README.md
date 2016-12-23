@@ -1,5 +1,4 @@
-# benva.github.io
-Portfolio website
+# Portfolio website
 
 To do
 - make header full page

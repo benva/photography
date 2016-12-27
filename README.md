@@ -6,3 +6,5 @@ To do
 - title of image on hover
 - pop up on click
 - add scroll indicator
+- change background specifications for mobile
+- get rid of .load

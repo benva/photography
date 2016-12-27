@@ -4,6 +4,7 @@ $(document).ready(function() {
         $(".content").css("margin-top", winHeight);
     };
 
+    // Call winHasChanged on load and on resize
     $(window).load("load", winHasChanged);
     $(window).on("resize", winHasChanged);
 });

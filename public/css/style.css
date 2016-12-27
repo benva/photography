@@ -60,7 +60,7 @@ body {
     -webkit-transition: .75s all;
 }
 
-.image-overlay:hover {
+.image-overlay img:hover {
     cursor: pointer;
     -webkit-filter: brightness(50%);
 }

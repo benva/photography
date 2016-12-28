@@ -6,10 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./public/css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./public/js/main.js"></script>
+
 </head>
 
 <body>
@@ -29,14 +32,14 @@
 
     <div class="content">
 
-        <div class="panel white">
-
-            <a href="#" class="tab">
+        <!-- fix link colours -->
+        <div class="content-panel white">
+            <a href="#">
                 <h3> Photos </h3>
             </a>
         </div>
 
-        <div class="panel white" id="first">
+        <div class="content-panel white" id="first">
             <div class="left square hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC03247-Edit.jpg">
@@ -51,7 +54,7 @@
             </div>
         </div>
 
-        <div class="panel grey">
+        <div class="content-panel grey">
             <div class="full hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC00241-Edit.jpg">
@@ -60,7 +63,7 @@
             </div>
         </div>
 
-        <div class="panel white">
+        <div class="content-panel white">
             <div class="left landscape hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/IMG_6371.jpg">
@@ -75,7 +78,7 @@
             </div>
         </div>
 
-        <div class="panel grey">
+        <div class="content-panel grey">
             <div class="full hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/IMG_1338.jpg">
@@ -84,7 +87,7 @@
             </div>
         </div>
 
-        <div class="panel white">
+        <div class="content-panel white">
             <div class="left square hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/IMG_0095-Edit.jpg">
@@ -99,7 +102,7 @@
             </div>
         </div>
 
-        <div class="panel grey">
+        <div class="content-panel grey">
             <div class="full hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/IMG_1274.jpg">
@@ -108,7 +111,7 @@
             </div>
         </div>
 
-        <div class="panel white">
+        <div class="content-panel white">
             <div class="left landscape hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC5876.jpg">
@@ -123,7 +126,7 @@
             </div>
         </div>
 
-        <div class="panel grey">
+        <div class="content-panel grey">
             <div class="full hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC04685-Edit.jpg">
@@ -132,7 +135,7 @@
             </div>
         </div>
 
-        <div class="panel white">
+        <div class="content-panel white">
             <div class="left landscape hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC05404-Edit.jpg">
@@ -147,7 +150,7 @@
             </div>
         </div>
 
-        <div class="panel grey">
+        <div class="content-panel grey">
             <div class="full hover-effect">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC5945.jpg">
@@ -156,7 +159,7 @@
             </div>
         </div>
 
-        <div class="panel white" id="last">
+        <div class="content-panel white" id="last">
             <div class="hover-effect" id="hm">
                 <a href="#" class="pop-up">
                     <img src="./public/img/DSC04605-Edit.jpg">
@@ -171,8 +174,9 @@
             </div>
         </div>
 
-        <div class="panel white" style="float: right">
-            <a href="#" class="tab">
+        <!-- Fix link colours -->
+        <div class="content-panel white" style="float: right">
+            <a href="#">
                 <h3> Contact </h3>
             </a>
         </div>
@@ -180,8 +184,15 @@
     </div>
 
     <!-- Image viewer modal -->
-
-
+    <div class="modal fade" id="img-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" data-dismiss="modal" class="img-preview">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

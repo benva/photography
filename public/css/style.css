@@ -63,8 +63,8 @@ body {
 
 .content-panel {
     display: inline-block;
-    padding-left: 50px;
-    padding-right: 50px;
+    /*padding-left: 3%;*/
+    /*padding-right: 3%;*/
 }
 
 .white {
@@ -75,12 +75,10 @@ body {
     background-color: #ebebeb;
 }
 
-#first {
-    padding-top: 100px;
-}
-
-#last {
-    padding-bottom: 100px;
+.tab {
+    padding-bottom: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 
@@ -162,6 +160,19 @@ body {
 ************** MODAL *****************
 *********************************** */
 
+.vertical-align-helper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
 .img-preview {
     width: 100%;
     height: auto;
@@ -169,7 +180,7 @@ body {
 }
 
 .modal-dialog {
-    width: 85%;
+    width: 90%;
     height: auto;
 }
 
@@ -180,6 +191,10 @@ body {
 
 .modal-content {
     border-radius: 0;
+    width: inherit;
+    height: inherit;
+    margin: 0 auto;
+    pointer-events: all;
 }
 
 .modal-body {
@@ -191,7 +206,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .modal-dialog {
-        width: 95%;
-    }
+    /*.modal-dialog {
+        width: 93%;
+    }*/
 }

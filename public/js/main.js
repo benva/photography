@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var winHasChanged = function() {
-        var winHeight = $(window).height() - 56;
+        var winHeight = $(window).height() - 66;
         $(".content").css("margin-top", winHeight);
     };
 

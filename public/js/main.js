@@ -4,8 +4,13 @@ $(document).ready(function() {
         $(".content").css("margin-top", winHeight);
     };
 
+    $('.pop-up').on('click', function(e) {
+        $('.img-preview').attr('src', $(this).find('img').attr('src'));
+        $('#img-modal').modal('show');
+        e.preventDefault();
+    });
+
     // get rid of .load
-    // Call winHasChanged on load and on resize
     $(window).load("load", winHasChanged);
     $(window).on("resize", winHasChanged);
 });

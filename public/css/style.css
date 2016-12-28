@@ -18,6 +18,27 @@ body {
     left: 0;
 }
 
+
+/* ***********************************
+************** INTRO *****************
+*********************************** */
+
+#background {
+    z-index: -2;
+    /* doesn't work on mobile */
+    height: auto;
+}
+
+#background-overlay {
+    background: black;
+    opacity: 0.8;
+}
+
+.center {
+    text-align: center;
+    top: 30%;
+}
+
 .text {
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
@@ -27,43 +48,57 @@ body {
 
 
 /* ***********************************
-************** INTRO *****************
-*********************************** */
-
-.background {
-    z-index: -2;
-    /* doesn't work on mobile */
-    height: auto;
-}
-
-.center {
-    text-align: center;
-    top: 30%;
-}
-
-.overlay {
-    background: black;
-    opacity: 0.8;
-}
-
-
-/* ***********************************
-************** CONTENT ***************
+************ SITE CONTENT ************
 *********************************** */
 
 .content {
     margin-top: 1080px;
-    line-height: 0px;
 }
 
-.image-overlay img {
-    -webkit-transition: .75s all;
+
+/* ***********************************
+********** PHOTO HOVERING ************
+*********************************** */
+
+.hover-effect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
 }
 
-.image-overlay img:hover {
+.hover-effect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.hover-effect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+.hover-effect:hover {
     cursor: pointer;
-    -webkit-filter: brightness(50%);
 }
+
+.hover-effect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
+  filter: grayscale(1) blur(3px);
+  -webkit-filter: grayscale(1) blur(3px);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 
 /* ***********************************
 ********* PHOTO POSITIONING **********

@@ -192,6 +192,6 @@ body {
 
 @media (max-width: 768px) {
     .modal-dialog {
-        width: 97%;
+        width: 95%;
     }
 }

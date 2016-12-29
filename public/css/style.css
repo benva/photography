@@ -81,11 +81,17 @@ body {
     transition: all 0.5s ease-in;
 }
 
+.arrow {
+    position: fixed;
+    bottom: 0px;
+    z-index: -1;
+    width: 100%;
+}
+
 .tab {
     background-color: #ffffff;
     border: none;
     color: #000000;
-    text-align: center;
     font-size: 2em;
     padding-top: 33px;
     padding-bottom: 33px;
@@ -223,10 +229,10 @@ body {
     pointer-events: none;
 }
 
-
 .img-preview {
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 .modal-backdrop.in {

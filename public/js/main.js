@@ -1,9 +1,8 @@
 $(document).ready(function() {
     var winHeight = $(window).height();
-    var tabSize = 66;
     var winHasChanged = function() {
         winHeight = $(window).height();
-        $(".content").css("margin-top", winHeight - tabSize);
+        $(".content").css("margin-top", winHeight);
     };
 
     // Show modal on image click

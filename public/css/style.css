@@ -81,7 +81,7 @@ body {
     transition: all 0.5s ease-in;
 }
 
-.button {
+.tab {
     background-color: #ffffff;
     border: none;
     color: #000000;
@@ -96,12 +96,12 @@ body {
     cursor: pointer;
 }
 
-.button:hover {
+.tab:hover {
     background-color: #000000;
     color: #ffffff;
 }
 
-.button:focus {
+.tab:focus {
     outline: none;
 }
 
@@ -115,14 +115,13 @@ body {
         padding-right: 2%;
         padding-top: 2%;
     }
-
     #last {
         padding-bottom: 2%;
     }
 }
 
 @media (max-width: 768px) {
-    .button {
+    .tab {
         padding-left: 25px;
         padding-right: 25px;
     }
@@ -224,14 +223,9 @@ body {
     pointer-events: none;
 }
 
+
 .img-preview {
     width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
-.modal-dialog {
-    width: 90%;
     height: auto;
 }
 
@@ -242,8 +236,8 @@ body {
 
 .modal-content {
     border-radius: 0;
-    width: inherit;
-    height: inherit;
+    width: 90%;
+    height: auto;
     margin: 0 auto;
     pointer-events: all;
 }
@@ -252,15 +246,8 @@ body {
     padding: 0;
 }
 
-
-/*@media (min-width: 768px) {
-    .modal-dialog {
-        width: 80%;
+@media (max-width: 768px) {
+    .modal-content {
+        width: auto;
     }
 }
-
-@media (min-width: 992px) {
-    .modal-dialog {
-        width: 70%;
-    }
-}*/

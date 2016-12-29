@@ -7,9 +7,9 @@ $(document).ready(function() {
     };
 
     // Show modal on image click
-    $('.pop-up').on('click', function(e) {
-        $('.img-preview').attr('src', $(this).find('img').attr('src'));
-        $('#img-modal').modal('show');
+    $(".pop-up").on("click", function(e) {
+        $(".img-preview").attr('src', $(this).find("img").attr("src"));
+        $("#img-modal").modal("show");
         e.preventDefault();
     });
 
@@ -17,10 +17,7 @@ $(document).ready(function() {
     $("#down").click(function(e) {
         $("html, body").animate({
             scrollTop: winHeight
-        }, 600, 'swing');
-        $(this).parent().removeClass("left");
-        $(this).parent().css("width", "100%");
-        $(this).parent().css("text-align", "center");
+        }, 600, "swing");
         e.preventDefault();
     });
 

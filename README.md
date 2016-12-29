@@ -1,6 +1,6 @@
 # [Photography Portfolio](https://benva.github.io/)
 
 To do
-- add contact button
+- make video for header (bokeh)
 - animate in new waypoints
 - make modal fit screen at all times (vh and vw)

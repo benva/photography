@@ -13,11 +13,10 @@ $(document).ready(function() {
     });
 
     // Scroll animation
-    $("#down").click(function(e) {
+    $("#down").on("click", function() {
         $("html, body").animate({
             scrollTop: winHeight
         }, 600, "swing");
-        e.preventDefault();
     });
 
     // get rid of .load

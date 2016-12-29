@@ -20,8 +20,6 @@ body {
     height: auto;
     z-index: -2;
     object-fit: contain;
-    -webkit-transition: opacity 0.5s ease-in;
-    transition: opacity 0.5s ease-in;
 }
 
 .fullscreen {
@@ -52,14 +50,7 @@ body {
     font-size: 28px;
 }
 
-.arrow {
-    position: fixed;
-    bottom: 35px;
-    z-index: -1;
-    width: 100%;
-}
-
-.tab {
+.button {
     background-color: #ffffff;
     border: none;
     color: #000000;
@@ -73,27 +64,40 @@ body {
     transition: all 0.5s ease-in;
 }
 
-.tab:focus {
+.button:focus {
     outline: none;
 }
 
+.contact {
+    position: fixed;
+    top: 35px;
+    right: 35px;
+    z-index: -1;
+}
+
+.arrow {
+    position: fixed;
+    bottom: 35px;
+    z-index: -1;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
-    .tab:hover {
+    .button:hover {
         background-color: #000000;
         color: #ffffff;
     }
 }
 
 @media (max-width: 768px) {
-    .tab {
-        font-size: 1.5em;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
+    .arrow {
+        display: none;
+    }
+    .contact {
+        /*display: none;*/
     }
     .background-photo {
-        opacity: 0;
+        display: none;
     }
 }
 

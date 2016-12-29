@@ -2,12 +2,9 @@ $(document).ready(function() {
     var winHeight = $(window).height();
     var tabSize = 66;
     var winHasChanged = function() {
+        winHeight = $(window).height();
         $(".content").css("margin-top", winHeight - tabSize);
     };
-    // get rid of .load
-    // Change top margin on page load and resize
-    $(window).load("load", winHasChanged);
-    $(window).on("resize", winHasChanged);
 
     // Show modal on image click
     $('.pop-up').on('click', function(e) {
@@ -17,17 +14,18 @@ $(document).ready(function() {
     });
 
     // Scroll animation
-    $("#photos").click(function(e) {
+    $("#down").click(function(e) {
         $("html, body").animate({
             scrollTop: winHeight
         }, 600, 'swing');
+        $(this).parent().removeClass("left");
+        $(this).parent().css("width", "100%");
+        $(this).parent().css("text-align", "center");
         e.preventDefault();
     });
 
-    $("#contact").click(function(e) {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 750, 'swing');
-        e.preventDefault();
-    });
+    // get rid of .load
+    // Change top margin on page load and resize
+    $(window).load("load", winHasChanged);
+    $(window).on("resize", winHasChanged);
 });

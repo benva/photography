@@ -63,22 +63,21 @@ body {
 
 .content-panel {
     display: inline-block;
-    /*padding-left: 3%;*/
-    /*padding-right: 3%;*/
-}
-
-.white {
     background-color: #ffffff;
-}
-
-.grey {
-    background-color: #ebebeb;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 4%;
 }
 
 .tab {
+    background-color: #ffffff;
     padding-bottom: 10px;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+#last {
+    padding-bottom: 4%;
 }
 
 
@@ -205,8 +204,14 @@ body {
     border-bottom: none;
 }
 
-@media (max-width: 768px) {
-    /*.modal-dialog {
-        width: 93%;
-    }*/
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-dialog {
+        width: 70%;
+    }
 }

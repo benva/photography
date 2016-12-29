@@ -69,6 +69,8 @@ body {
     padding-left: 25px;
     padding-right: 25px;
     cursor: pointer;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 .tab:focus {
@@ -76,15 +78,6 @@ body {
 }
 
 @media (min-width: 768px) {
-    .tab {
-        font-size: 1em;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 15px;
-        padding-right: 15px;
-        -webkit-transition: all 0.5s ease-in;
-        transition: all 0.5s ease-in;
-    }
     .tab:hover {
         background-color: #000000;
         color: #ffffff;
@@ -92,6 +85,13 @@ body {
 }
 
 @media (max-width: 768px) {
+    .tab {
+        font-size: 1.5em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .background-photo {
         opacity: 0;
     }

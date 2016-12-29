@@ -1,5 +1,5 @@
 # [Photography Portfolio](https://benva.github.io/)
 
 To do
-- make video for header
+- add contact button
 - animate in new waypoints

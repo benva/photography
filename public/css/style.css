@@ -61,8 +61,8 @@ body {
     padding-right: 25px;
     opacity: 0.8;
     cursor: pointer;
-    -webkit-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in;
+    /*-webkit-transition: all 0.5s ease-in;*/
+    /*transition: all 0.5s ease-in;*/
 }
 
 .button:focus {
@@ -79,7 +79,8 @@ body {
 .info-box {
     opacity: 0;
     position: fixed;
-    top: 110px;
+    z-index: -1;
+    top: 125px;
     right: 35px;
     width: 136px;
     height: 30px;
@@ -88,16 +89,8 @@ body {
     transition: opacity 0.5s ease-in;
 }
 
-/*#info a {
-    text-decoration: none;
-}
-
-#info a:hover {
-    color: #ffffff;
-}*/
-
 #info {
-    margin-left: 5px;
+    margin-left: 8px;
     margin-top: 2px;
     font-family: monospace;
     font-size: 1.3em;
@@ -123,23 +116,40 @@ body {
     .background-photo {
         display: none;
     }
-
     .title {
         font-size: 3em;
+    }
+    .button {
+        font-size: 1em;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
     .caption {
         font-size: 1em;
     }
     .contact {
-        display: none;
+        top: 20px;
+        right: 20px;
     }
     .info-box {
-        display: none;
+        background-color: #ffffff;
+        top: 65px;
+        right: 20px;
+        width: 67px;
+        height: 20px;
+    }
+    #info {
+        color: #000000;
+        font-family: inherit;
+        margin-left: 3px;
+        margin-top: 2px;
+        font-size: 0.8em;
     }
     .arrow {
-        display: none;
+        bottom: 20px;
     }
-
 }
 
 

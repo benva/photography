@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var mobileWidth = 768;
+    var winWidth = $(window).width();
     var winHeight = $(window).height();
     var winHasChanged = function() {
         winHeight = $(window).height();
@@ -6,25 +8,48 @@ $(document).ready(function() {
     };
 
     // Contact button animation
-    $("#contact").on("click", function(e) {
+    $("#contact").one("click", function(e) {
         $(".info-box").css("opacity", "0.8");
-        $("#info").typewrite({
-            actions: [
-                {speed: 5},
-                {delay: 1500},
-                {type: "me@bemva.ca"},
-                {delay: 1000},
-                {select: {from: 5, to: 11}},
-                {remove: {num: 6, type: "whole"}},
-                {delay: 500},
-                {type: "nvs."},
-                {delay: 500},
-                {remove: {num: 2, type: "stepped"}},
-                {delay: 500},
-                {type: "a.ca"}
-            ]
-        });
-        
+        if (winWidth > 768) {
+            $("#info").typewrite({
+                actions: [{
+                    speed: 5
+                }, {
+                    delay: 1500
+                }, {
+                    type: "me@bemva.ca"
+                }, {
+                    delay: 1000
+                }, {
+                    select: {
+                        from: 5,
+                        to: 11
+                    }
+                }, {
+                    remove: {
+                        num: 6,
+                        type: "whole"
+                    }
+                }, {
+                    delay: 500
+                }, {
+                    type: "nvs."
+                }, {
+                    delay: 500
+                }, {
+                    remove: {
+                        num: 2,
+                        type: "stepped"
+                    }
+                }, {
+                    delay: 500
+                }, {
+                    type: "a.ca"
+                }]
+            });
+        } else {
+            $("#info").html("me@benva.ca");
+        }
         e.preventDefault();
     });
 
@@ -41,7 +66,6 @@ $(document).ready(function() {
         $("#img-modal").modal("show");
         e.preventDefault();
     });
-
 
     // get rid of .load
     // Change top margin on page load and resize

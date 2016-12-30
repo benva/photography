@@ -2,7 +2,6 @@
 
 To do
 - make video for header (bokeh)
-- animate in new waypoints
 - make modal fit screen at all times (vh and vw)
 - separate photos horizontally
 - cross-browser support

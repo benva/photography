@@ -5,3 +5,4 @@ To do
 - animate in new waypoints
 - make modal fit screen at all times (vh and vw)
 - separate photos horizontally
+- cross-browser support

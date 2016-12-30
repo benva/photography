@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 body {
-    margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
+    /*margin: 0;*/
+    font-family: 'Roboto', sans-serif;
     background-color: #000000;
     color: #ffffff;
 }
@@ -43,10 +46,10 @@ body {
     font-size: 5em;
     font-weight: bolder;
     text-transform: uppercase;
-    letter-spacing: 10px;
 }
 
 .caption {
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 2em;
 }
 
@@ -61,8 +64,8 @@ body {
     padding-right: 25px;
     opacity: 0.8;
     cursor: pointer;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .button:focus {
@@ -82,7 +85,7 @@ body {
     z-index: -1;
     top: 125px;
     right: 35px;
-    width: 136px;
+    width: 148px;
     height: 30px;
     background-color: #333333;
     -webkit-transition: opacity 0.5s ease-in-out;
@@ -90,9 +93,9 @@ body {
 }
 
 #info {
-    margin-left: 8px;
+    margin-left: 13px;
     margin-top: 2px;
-    font-family: monospace;
+    font-family: 'Ubuntu', sans-serif;;
     font-size: 1.3em;
 }
 
@@ -133,17 +136,18 @@ body {
     }
     .info-box {
         background-color: #ffffff;
-        top: 65px;
+        top: 58px;
         right: 20px;
-        width: 67px;
+        width: 73px;
         height: 20px;
+        /*text-align: center;*/
     }
     #info {
         color: #000000;
         font-family: inherit;
-        margin-left: 3px;
-        margin-top: 2px;
-        font-size: 0.8em;
+        margin-left: 5px;
+        margin-top: 3px;
+        font-size: 0.7em;
     }
     .arrow {
         bottom: 20px;
@@ -157,81 +161,13 @@ body {
 
 .content {
     margin-top: 1080px;
+    background-color: #ffffff;
     line-height: 0;
+    height: 100%;
 }
 
 .content img {
     width: 100%;
-}
-
-.content-panel {
-    display: inline-block;
-    background-color: #ffffff;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 4%;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.last {
-    padding-bottom: 4%;
-}
-
-@media (min-width: 768px) {
-    .content-panel {
-        padding-left: 2%;
-        padding-right: 2%;
-        padding-top: 2%;
-    }
-    .last {
-        padding-bottom: 2%;
-    }
-}
-
-
-/* ***********************************
-********** PHOTO HOVERING ************
-*********************************** */
-
-.hover-effect {
-    width: 100%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    cursor: default;
-}
-
-.hover-effect .overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-}
-
-.hover-effect img {
-    display: block;
-    position: relative;
-    -webkit-transition: all 0.6s ease-in;
-    transition: all 0.6s ease-in;
-}
-
-@media (min-width: 768px) {
-    .hover-effect:hover {
-        cursor: pointer;
-    }
-    .hover-effect:hover img {
-        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-        filter: grayscale(1) blur(3px);
-        -webkit-filter: grayscale(1) blur(3px);
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-    }
 }
 
 
@@ -256,12 +192,12 @@ body {
 }
 
 .full {
+    clear: both;
     width: 100%;
 }
 
 #hm {
     width: 57%;
-    float: left;
 }
 
 #hope {

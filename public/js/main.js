@@ -1,11 +1,16 @@
 $(document).ready(function() {
-    var mobileWidth = 768;
-    var winWidth = $(window).width();
     var winHeight = $(window).height();
     var winHasChanged = function() {
         winHeight = $(window).height();
         $(".content").css("margin-top", winHeight);
     };
+    $(window).ready(winHasChanged);
+
+    var mobileWidth = 768;
+    var winWidth = $(window).width();
+
+    // Change top margin on page resize
+    $(window).on("resize", winHasChanged);
 
     // Contact button animation
     $("#contact").one("click", function(e) {
@@ -68,15 +73,17 @@ $(document).ready(function() {
         // Use full image instead of scaled
         var imgSrc = $(this).find("img").attr("src");
         var srcLength = imgSrc.length;
-        var fullImg = imgSrc.substring(0, srcLength-4) + "-full.jpg";
-        
+        var fullImg = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
+
         $(".img-preview").attr("src", fullImg);
         $("#img-modal").modal("show");
         e.preventDefault();
     });
 
-    // get rid of .load
-    // Change top margin on page load and resize
-    $(window).load("load", winHasChanged);
-    $(window).on("resize", winHasChanged);
+    // Reveal on scroll animation
+    window.sr = ScrollReveal({distance: "2.5px", scale: 0.95, viewFactor: 0.4, easing: "ease-in-out"});
+    sr.reveal(".left", {origin: "left"});
+    sr.reveal(".right", {origin: "right"});
+    sr.reveal(".full", {origin: "bottom"});
+
 });

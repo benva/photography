@@ -10,6 +10,7 @@ $(document).ready(function() {
     // Contact button animation
     $("#contact").one("click", function(e) {
         $(".info-box").css("opacity", "0.8");
+        winWidth = $(window).width();
         if (winWidth > 768) {
             $("#info").typewrite({
                 actions: [{
@@ -25,6 +26,8 @@ $(document).ready(function() {
                         from: 5,
                         to: 11
                     }
+                }, {
+                    delay: 500
                 }, {
                     remove: {
                         num: 6,
@@ -62,7 +65,12 @@ $(document).ready(function() {
 
     // Show modal on image click
     $(".pop-up").on("click", function(e) {
-        $(".img-preview").attr('src', $(this).find("img").attr("src"));
+        // Use full image instead of scaled
+        var imgSrc = $(this).find("img").attr("src");
+        var srcLength = imgSrc.length;
+        var fullImg = imgSrc.substring(0, srcLength-4) + "-full.jpg";
+        
+        $(".img-preview").attr("src", fullImg);
         $("#img-modal").modal("show");
         e.preventDefault();
     });

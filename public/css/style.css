@@ -61,8 +61,8 @@ body {
     padding-right: 25px;
     opacity: 0.8;
     cursor: pointer;
-    /*-webkit-transition: all 0.5s ease-in;*/
-    /*transition: all 0.5s ease-in;*/
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .button:focus {
@@ -84,9 +84,9 @@ body {
     right: 35px;
     width: 136px;
     height: 30px;
-    background-color: #000000;
-    -webkit-transition: opacity 0.5s ease-in;
-    transition: opacity 0.5s ease-in;
+    background-color: #333333;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #info {
@@ -94,8 +94,6 @@ body {
     margin-top: 2px;
     font-family: monospace;
     font-size: 1.3em;
-    color: #ffffff;
-    opacity: 0.8;
 }
 
 .arrow {
@@ -172,8 +170,8 @@ body {
     padding-left: 4%;
     padding-right: 4%;
     padding-top: 4%;
-    -webkit-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .last {

@@ -1,22 +1,19 @@
 $(document).ready(function() {
-    var winHeight = $(window).height();
     var winHasChanged = function() {
-        winHeight = $(window).height();
-        $(".content").css("margin-top", winHeight);
+        $(".content").css("margin-top", $(window).height());
     };
     $(window).ready(winHasChanged);
 
     var mobileWidth = 768;
-    var winWidth = $(window).width();
+    var largeWidth = 992;
 
     // Change top margin on page resize
     $(window).on("resize", winHasChanged);
 
     // Contact button animation
     $("#contact").one("click", function(e) {
+        if ($(window).width() > 768) {
         $(".info-box").css("opacity", "0.8");
-        winWidth = $(window).width();
-        if (winWidth > 768) {
             $("#info").typewrite({
                 actions: [{
                     speed: 5
@@ -56,7 +53,7 @@ $(document).ready(function() {
                 }]
             });
         } else {
-            $("#info").html("me@benva.ca");
+            // $(".contact").html("<a href=\"mailto:me@benva.ca\" class=\"button\">me@benva.ca</div>");
         }
         e.preventDefault();
     });
@@ -64,26 +61,40 @@ $(document).ready(function() {
     // Scroll animation
     $("#down").on("click", function() {
         $("html, body").animate({
-            scrollTop: winHeight
+            scrollTop: $(window).height()
         }, 600, "swing");
     });
 
     // Show modal on image click
     $(".pop-up").on("click", function(e) {
-        // Use full image instead of scaled
         var imgSrc = $(this).find("img").attr("src");
-        var srcLength = imgSrc.length;
-        var fullImg = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
 
-        $(".img-preview").attr("src", fullImg);
+        // Use full image instead of scaled if width is large
+        if ($(window).width() > largeWidth) {
+            var srcLength = imgSrc.length;
+            imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
+        }
+
+        $(".img-preview").attr("src", imgSrc);
         $("#img-modal").modal("show");
         e.preventDefault();
     });
 
     // Reveal on scroll animation
-    window.sr = ScrollReveal({distance: "2.5px", scale: 0.95, viewFactor: 0.4, easing: "ease-in-out"});
-    sr.reveal(".left", {origin: "left"});
-    sr.reveal(".right", {origin: "right"});
-    sr.reveal(".full", {origin: "bottom"});
+    window.sr = ScrollReveal({
+        distance: "2.5px",
+        scale: 0.95,
+        viewFactor: 0.4,
+        easing: "ease-in-out"
+    });
+    sr.reveal(".left", {
+        origin: "left"
+    });
+    sr.reveal(".right", {
+        origin: "right"
+    });
+    sr.reveal(".full", {
+        origin: "bottom"
+    });
 
 });

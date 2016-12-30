@@ -11,9 +11,9 @@ $(document).ready(function() {
     $(window).on("resize", winHasChanged);
 
     // Contact button animation
-    $("#contact").one("click", function(e) {
-        if ($(window).width() > 768) {
-        $(".info-box").css("opacity", "0.8");
+    $("#contact").one("click", function() {
+        if ($(window).width() > mobileWidth) {
+            $(".info-box").slideDown();
             $("#info").typewrite({
                 actions: [{
                     speed: 5
@@ -52,10 +52,7 @@ $(document).ready(function() {
                     type: "a.ca"
                 }]
             });
-        } else {
-            // $(".contact").html("<a href=\"mailto:me@benva.ca\" class=\"button\">me@benva.ca</div>");
         }
-        e.preventDefault();
     });
 
     // Scroll animation
@@ -96,5 +93,4 @@ $(document).ready(function() {
     sr.reveal(".full", {
         origin: "bottom"
     });
-
 });

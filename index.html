@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>benva</title>
+    <title>Ben Va Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./public/css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrvautin/typewrite/master/dist/typewrite.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./public/js/main.js"></script>
 
@@ -27,17 +28,17 @@
         </div>
 
         <div class="contact">
-            <a href="mailto:me@benva.ca">
-                <button class="button">
-                    Contact
-                </button>
-            </a>
+            <button class="button" id="contact"> Contact </button>
         </div>
+        <div class="info-box">
+            <a href="mailto:me@benva.ca"><div class="" id="info"></div></a>
+        </div>
+
+
 
         <div class="center arrow">
-            <button class="button" id="down">&darr;</button>
+            <button class="button" id="down"> &darr; </button>
         </div>
-
     </div>
 
     <div class="content">
@@ -177,6 +178,8 @@
                 </a>
             </div>
         </div>
+
+
 
     </div>
 

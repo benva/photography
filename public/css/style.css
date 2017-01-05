@@ -131,6 +131,9 @@ body {
         display: none;
         opacity: 0;
     }
+    #info {
+        display: none;
+    }
     .contact {
         top: 20px;
         right: 20px;

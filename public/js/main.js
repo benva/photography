@@ -1,16 +1,16 @@
 $(document).ready(function() {
+
+    // Called whenever window is resized
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
     };
     $(window).ready(winHasChanged);
+    $(window).on("resize", winHasChanged);
 
     var mobileWidth = 768;
     var largeWidth = 992;
 
-    // Change top margin on page resize
-    $(window).on("resize", winHasChanged);
-
-    // Contact button animation
+    // Contact information typing animation for desktop only
     $("#contact").one("click", function() {
         if ($(window).width() > mobileWidth) {
             $(".info-box").slideDown();
@@ -55,7 +55,7 @@ $(document).ready(function() {
         }
     });
 
-    // Scroll animation
+    // Down arrow scroll animation
     $("#down").on("click", function() {
         $("html, body").animate({
             scrollTop: $(window).height()
@@ -66,7 +66,7 @@ $(document).ready(function() {
     $(".pop-up").on("click", function(e) {
         var imgSrc = $(this).find("img").attr("src");
 
-        // Use full image instead of scaled if width is large
+        // Use full image instead of scaled if screen width is large
         if ($(window).width() > largeWidth) {
             var srcLength = imgSrc.length;
             imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
@@ -77,13 +77,14 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    // Reveal on scroll animation
+    // Scroll reveal animtion
     window.sr = ScrollReveal({
         distance: "2.5px",
         scale: 0.95,
         viewFactor: 0.4,
         easing: "ease-in-out"
     });
+
     sr.reveal(".left", {
         origin: "left"
     });

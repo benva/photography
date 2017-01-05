@@ -3,6 +3,12 @@ $(document).ready(function() {
     // Called whenever window is resized
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
+
+        if ($(window).width() < mobileWidth) {
+            $("#contact-mobile").attr("href", "mailto:me@benva.ca");
+        } else {
+            $("#contact-mobile").attr("href", "#");
+        }
     };
     $(window).ready(winHasChanged);
     $(window).on("resize", winHasChanged);
@@ -11,7 +17,8 @@ $(document).ready(function() {
     var largeWidth = 992;
 
     // Contact information typing animation for desktop only
-    $("#contact").one("click", function() {
+    $("#contact").one("click", function(e) {
+
         if ($(window).width() > mobileWidth) {
             $(".info-box").slideDown();
             $("#info").typewrite({
@@ -53,6 +60,7 @@ $(document).ready(function() {
                 }]
             });
         }
+        e.preventDefault();
     });
 
     // Down arrow scroll animation
@@ -84,7 +92,6 @@ $(document).ready(function() {
         viewFactor: 0.4,
         easing: "ease-in-out"
     });
-
     sr.reveal(".left", {
         origin: "left"
     });

@@ -1,20 +1,28 @@
 $(document).ready(function() {
+    var mobileWidth = 768;
+    var largeWidth = 992;
+    var largeOffset = 425;
+    var mobileOffset = 500;
+    var offset = largeOffset;
 
     // Called whenever window is resized
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
-
         if ($(window).width() < mobileWidth) {
             $("#contact-mobile").attr("href", "mailto:me@benva.ca");
+
+            offset = mobileOffset;
         } else {
             $("#contact-mobile").attr("href", "#");
+
+            offset = largeOffset;
         }
+
     };
     $(window).ready(winHasChanged);
     $(window).on("resize", winHasChanged);
 
-    var mobileWidth = 768;
-    var largeWidth = 992;
+
 
     // Contact information typing animation for desktop only
     $("#contact").one("click", function(e) {
@@ -70,19 +78,17 @@ $(document).ready(function() {
         }, 600, "swing");
     });
 
-    // Show modal on image click
-    $(".pop-up").on("click", function(e) {
-        var imgSrc = $(this).find("img").attr("src");
-
-        // Use full image instead of scaled if screen width is large
-        if ($(window).width() > largeWidth) {
-            var srcLength = imgSrc.length;
-            imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
-        }
-
-        $(".img-preview").attr("src", imgSrc);
-        $("#img-modal").modal("show");
-        e.preventDefault();
+    // Blur intro on scroll
+    var waypoint = new Waypoint({
+        element: $(".content"),
+        handler: function(direction) {
+            if (direction == "down") {
+                $(".intro").addClass("blur")
+            } else {
+                $(".intro").removeClass("blur")
+            }
+        },
+        offset: ($(window).height() + offset)
     });
 
     // Scroll reveal animtion
@@ -100,5 +106,20 @@ $(document).ready(function() {
     });
     sr.reveal(".full", {
         origin: "bottom"
+    });
+
+    // Show modal on image click
+    $(".pop-up").on("click", function(e) {
+        var imgSrc = $(this).find("img").attr("src");
+
+        // Use full image instead of scaled if screen width is large
+        if ($(window).width() > largeWidth) {
+            var srcLength = imgSrc.length;
+            imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
+        }
+
+        $(".img-preview").attr("src", imgSrc);
+        $("#img-modal").modal("show");
+        e.preventDefault();
     });
 });

@@ -87,7 +87,7 @@ $(document).ready(function() {
                 $(".intro").removeClass("blur")
             }
         },
-        offset: ($(window).height())
+        offset: ($(window).height()-200)
     });
 
     // Scroll reveal animtion

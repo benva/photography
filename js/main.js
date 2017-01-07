@@ -22,8 +22,6 @@ $(document).ready(function() {
     $(window).ready(winHasChanged);
     $(window).on("resize", winHasChanged);
 
-
-
     // Contact information typing animation for desktop only
     $("#contact").one("click", function(e) {
         if ($(window).width() > mobileWidth) {
@@ -86,7 +84,8 @@ $(document).ready(function() {
             } else {
                 $(".intro").removeClass("blur")
             }
-        }
+        },
+        offset: ($(window).height() + offset)
     });
 
     // Scroll reveal animtion

@@ -226,8 +226,12 @@ body {
 }
 
 .img-full {
-    width: 100%;
+    width: auto;
+    max-width: 90%;
     height: auto;
+    max-height: 90vh;
+
+
     cursor: pointer;
 }
 
@@ -239,10 +243,11 @@ body {
 .modal-content {
     background-color: rgba(0,0,0,0);
     border-radius: 0;
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
+    box-shadow: none;
+    border: none;
+    margin: 0 auto 0;
     pointer-events: all;
+    text-align: center;
 }
 
 .modal-body {
@@ -250,7 +255,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .modal-content {
-        width: auto;
+    .img-full {
+        max-width: 100%;
     }
 }

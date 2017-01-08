@@ -95,7 +95,7 @@ $(document).ready(function() {
         distance: "2.5px",
         scale: 0.95,
         mobile: false,
-        viewFactor: 0.4,
+        viewFactor: 0.3,
         easing: "ease-in-out"
     });
     sr.reveal(".left", {
@@ -120,6 +120,7 @@ $(document).ready(function() {
         }
 
         $(".img-full").attr("src", imgSrc);
+        // $(".img-description").html(imgAlt);
         $("#img-modal").modal("show");
         e.preventDefault();
     });

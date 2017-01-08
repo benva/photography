@@ -1,21 +1,22 @@
 $(document).ready(function() {
     var mobileWidth = 768;
     var largeWidth = 992;
-    var largeOffset = 425;
-    var mobileOffset = 500;
-    var offset = largeOffset;
 
-    // Called whenever window is resized
+    // Responsive elements are altered
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
+
         if ($(window).width() < mobileWidth) {
             $("#contact-mobile").attr("href", "mailto:me@benva.ca");
 
-            offset = mobileOffset;
+            // Disable background blur
+            Waypoint.disableAll();
+            if($(".intro").hasClass("blur"))
+                $(".intro").removeClass("blur")
         } else {
             $("#contact-mobile").attr("href", "#");
 
-            offset = largeOffset;
+            Waypoint.enableAll();
         }
 
     };
@@ -80,12 +81,15 @@ $(document).ready(function() {
         element: $(".content"),
         handler: function(direction) {
             if (direction == "down") {
+                // alert("this.triggerPoint: " + this.triggerPoint + "\nWaypoint.viewportHeight: " + Waypoint.viewportHeight())
                 $(".intro").addClass("blur")
-            } else {
+            }
+            if (direction == "up"){
+                // alert("this.triggerPoint: " + this.triggerPoint + "\nWaypoint.viewportHeight: " + Waypoint.viewportHeight())
                 $(".intro").removeClass("blur")
             }
         },
-        offset: ($(window).height() + offset)
+        offset: $(window).height() - 200
     });
 
     // Scroll reveal animtion

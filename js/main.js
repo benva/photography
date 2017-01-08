@@ -6,10 +6,9 @@ $(document).ready(function() {
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
 
+        // For mobile
         if ($(window).width() <= mobileWidth) {
             $("#contact-mobile").attr("href", "mailto:me@benva.ca");
-
-            window.sr = null;
 
             // Disable intro blur
             Waypoint.disableAll();
@@ -25,7 +24,7 @@ $(document).ready(function() {
     $(window).ready(winHasChanged);
     $(window).on("resize", winHasChanged);
 
-    // Contact information typing animation for desktop only
+    // Animation to type out email address
     $("#contact").one("click", function(e) {
         if ($(window).width() > mobileWidth) {
             $(".info-box").slideDown();
@@ -78,7 +77,7 @@ $(document).ready(function() {
         }, 600, "swing");
     });
 
-    // Blur intro on scroll
+    // Scroll down 25% of the screen to blur intro
     var waypoint = new Waypoint({
         element: $(".content"),
         handler: function(direction) {
@@ -90,7 +89,7 @@ $(document).ready(function() {
         offset: $(window).height() - $(window).height() * .25
     });
 
-    // Scroll reveal animtion
+    // Animation to reveal photos when scrolling
     window.sr = ScrollReveal({
         distance: "2.5px",
         scale: 0.95,

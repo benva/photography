@@ -18,9 +18,14 @@ body {
 }
 
 .blur {
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: gray;
+    filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='3'%20/></filter></svg>#blur");
     filter: grayscale(1) blur(3px);
     -webkit-filter: grayscale(1) blur(3px);
+    -moz-filter: grayscale(1) blur(3px);
+    -o-filter: grayscale(1) blur(3px);
+    -ms-filter: grayscale(1) blur(3px);
 }
 
 .background-photo {
@@ -169,11 +174,6 @@ body {
 }
 
 
-/*@media (max-width: 768px) {
-
-}*/
-
-
 /* ***********************************
 ********* PHOTO POSITIONING **********
 *********************************** */
@@ -230,8 +230,6 @@ body {
     max-width: 90%;
     height: auto;
     max-height: 90vh;
-
-
     cursor: pointer;
 }
 
@@ -241,7 +239,7 @@ body {
 }
 
 .modal-content {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 0;
     box-shadow: none;
     border: none;

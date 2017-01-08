@@ -6,8 +6,10 @@ $(document).ready(function() {
     var winHasChanged = function() {
         $(".content").css("margin-top", $(window).height());
 
-        if ($(window).width() < mobileWidth) {
+        if ($(window).width() <= mobileWidth) {
             $("#contact-mobile").attr("href", "mailto:me@benva.ca");
+
+            window.sr = null;
 
             // Disable intro blur
             Waypoint.disableAll();
@@ -110,8 +112,8 @@ $(document).ready(function() {
     $(".pop-up").on("click", function(e) {
         var imgSrc = $(this).find("img").attr("src");
 
-        // Use full image instead of scaled if screen width is large
-        if ($(window).width() > largeWidth) {
+        // Use full image instead of scaled on large screens
+        if ($(window).width() >= largeWidth) {
             var srcLength = imgSrc.length;
             imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
         }

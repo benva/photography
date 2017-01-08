@@ -85,13 +85,11 @@ body {
     position: fixed;
     top: 35px;
     right: 35px;
-    z-index: -1;
 }
 
 .info-box {
     display: none;
     position: fixed;
-    z-index: -1;
     top: 105px;
     right: 35px;
     width: 148px;
@@ -109,7 +107,6 @@ body {
 .arrow {
     position: fixed;
     bottom: 35px;
-    z-index: -1;
     width: 100%;
 }
 
@@ -159,7 +156,7 @@ body {
 *********************************** */
 
 .content {
-    margin-top: 1080px;
+    margin: 1080px auto 0px;
     background-color: #ffffff;
 }
 
@@ -228,7 +225,7 @@ body {
     pointer-events: none;
 }
 
-.img-preview {
+.img-full {
     width: 100%;
     height: auto;
     cursor: pointer;
@@ -240,6 +237,7 @@ body {
 }
 
 .modal-content {
+    background-color: rgba(0,0,0,0);
     border-radius: 0;
     width: 90%;
     height: auto;

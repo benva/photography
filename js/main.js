@@ -111,6 +111,7 @@ $(document).ready(function() {
     // Show modal on image click
     $(".pop-up").on("click", function(e) {
         var imgSrc = $(this).find("img").attr("src");
+        // var imgAlt = $(this).find("img").attr("alt");
 
         // Use full image instead of scaled on large screens
         if ($(window).width() >= largeWidth) {
@@ -118,7 +119,7 @@ $(document).ready(function() {
             imgSrc = imgSrc.substring(0, srcLength - 4) + "-full.jpg";
         }
 
-        $(".img-preview").attr("src", imgSrc);
+        $(".img-full").attr("src", imgSrc);
         $("#img-modal").modal("show");
         e.preventDefault();
     });

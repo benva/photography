@@ -9,7 +9,7 @@ $(document).ready(function() {
         if ($(window).width() < mobileWidth) {
             $("#contact-mobile").attr("href", "mailto:me@benva.ca");
 
-            // Disable background blur
+            // Disable intro blur
             Waypoint.disableAll();
             if($(".intro").hasClass("blur"))
                 $(".intro").removeClass("blur")
@@ -80,14 +80,10 @@ $(document).ready(function() {
     var waypoint = new Waypoint({
         element: $(".content"),
         handler: function(direction) {
-            if (direction == "down") {
-                // alert("this.triggerPoint: " + this.triggerPoint + "\nWaypoint.viewportHeight: " + Waypoint.viewportHeight())
+            if (direction == "down")
                 $(".intro").addClass("blur")
-            }
-            if (direction == "up"){
-                // alert("this.triggerPoint: " + this.triggerPoint + "\nWaypoint.viewportHeight: " + Waypoint.viewportHeight())
+            if (direction == "up")
                 $(".intro").removeClass("blur")
-            }
         },
         offset: $(window).height() - 200
     });
@@ -96,6 +92,7 @@ $(document).ready(function() {
     window.sr = ScrollReveal({
         distance: "2.5px",
         scale: 0.95,
+        mobile: false,
         viewFactor: 0.4,
         easing: "ease-in-out"
     });

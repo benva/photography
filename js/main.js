@@ -13,7 +13,7 @@ $(document).ready(function() {
 
             // Disable intro blur
             Waypoint.disableAll();
-            if($(".intro").hasClass("blur"))
+            if ($(".intro").hasClass("blur"))
                 $(".intro").removeClass("blur")
         } else {
             $("#contact-mobile").attr("href", "#");
@@ -87,7 +87,7 @@ $(document).ready(function() {
             if (direction == "up")
                 $(".intro").removeClass("blur")
         },
-        offset: $(window).height() - 200
+        offset: $(window).height() - $(window).height() * .25
     });
 
     // Scroll reveal animtion

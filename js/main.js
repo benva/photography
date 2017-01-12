@@ -92,7 +92,7 @@ $(document).ready(function() {
     // Animation to reveal photos when scrolling
     window.sr = ScrollReveal({
         distance: "2.5px",
-        scale: 0.95,
+        scale: 1,
         mobile: false,
         viewFactor: 0.3,
         easing: "ease-in-out"

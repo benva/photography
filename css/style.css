@@ -120,9 +120,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    .background-photo {
+    /*.background-photo {
         display: none;
-    }
+    }*/
     .title {
         font-size: 3em;
     }
